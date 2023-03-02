@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <script defer src="./login.js"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li><a href="./login.html">Biblioteca</a></li>
+      </ul>
+    </nav>
+
+    <div class="form">
+      <div class="form-control">
+        <label for="matricula">Matricula:</label>
+        <input
+          autocomplete="off"
+          id="matricula"
+          name="Email"
+          class="input1"
+          type="text"
+        />
+      </div>
+      <div class="form-control">
+        <label for="senha">Senha:</label>
+        <input
+          type="password"
+          name="text"
+          class="input"
+          pattern="\d+"
+          id="senha"
+        />
+      </div>
+      <button onclick="autenticar()">
+        <span class="transition"></span>
+        <span class="gradient"></span>
+        <span class="label">Login</span>
+      </button>
+    </div>
+  </body>
+</html>

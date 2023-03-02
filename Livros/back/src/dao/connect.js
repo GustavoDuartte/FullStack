@@ -1,9 +1,9 @@
-const mysql = require('mysql')
+const mysql = require("mysql");
 
-const con = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    database: 'inventario'
+const con = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  database: "biblioteca",
 });
 
 module.exports = con;
