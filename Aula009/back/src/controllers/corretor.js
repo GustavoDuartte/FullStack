@@ -27,27 +27,27 @@ const listar = (req, res) => {
   });
 };
 
-const autenticar = (req,res) => {
-  const {matricula,senha}= req.body;
+const autenticar = (req, res) => {
+  const { matricula, senha } = req.body;
 
   let query = `SELECT * FROM corretores WHERE matricula = '${matricula}' AND senha = '${senha}'`;
 
-  con.query(query,(err, response) => {
-    if(err == undefined) {
-      if(response.length == 0){
-        res.status(401).json({"msg":"Usuario ou senha invalidos"}).end()
-      }else{ 
+  con.query(query, (err, response) => {
+    if (err == undefined) {
+      if (response.length == 0) {
+        res.status(401).json({ msg: "Usuario ou senha invalidos" }).end();
+      } else {
         let corretor = response[0];
-        
+
         delete corretor.senha;
-        
+
         res.status(200).json(corretor).end();
       }
-    }else{
+    } else {
       res.status(401).json(err).end();
     }
-  })
-}
+  });
+};
 
 module.exports = {
   adicionar,

@@ -1,0 +1,21 @@
+@import url("./global.css");
+
+header {
+  width: 100vw;
+  height: 10vh;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header p:nth-child(2) {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.card {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

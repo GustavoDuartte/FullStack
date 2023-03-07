@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script defer src="../js/home.js"></script>
+    <title>Document</title>
+  </head>
+  <body onload="carregar">
+    <header>
+      <p id="nome"></p>
+      <p onclick="logoff">Sair</p>
+    </header>
+    <main>
+      <div class="card model">
+        <div id="info">
+          <p id="codigo">KSA12134</p>
+          <p id="endereco">Rua ruana 8</p>
+        </div>
+        <div id="valores">
+          <p id="venda">400000</p>
+          <p id="aluguel">500</p>
+        </div>
+        <p id="status">Disponivel</p>
+        <div class="opcoes">
+          <button onclick="alterarStatus(2)">Alugar</button>
+          <button onclick="alterarStatus(3)">Vender</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
