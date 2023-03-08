@@ -10,5 +10,6 @@ router.post("/imovel", Imoveis.adicionar);
 router.put("/alterar/:codigo/:status", Imoveis.alterarStatus);
 router.put("/atualizar", Imoveis.atualizar);
 router.delete("/deletar/:id", Imoveis.excluir);
+router.get("/imoveis/corretor/:id", Imoveis.imoveisPorCorretor);
 
 module.exports = router;

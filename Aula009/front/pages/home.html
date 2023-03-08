@@ -4,31 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imobiliaria</title>
     <link rel="stylesheet" href="../css/home.css" />
-    <script defer src="../js/home.js"></script>
-    <title>Document</title>
   </head>
-  <body onload="carregar">
+  <body onload="carregar()">
     <header>
       <p id="nome"></p>
-      <p onclick="logoff">Sair</p>
+      <p onclick="logoff()">Sair</p>
     </header>
     <main>
       <div class="card model">
         <div id="info">
           <p id="codigo">KSA12134</p>
-          <p id="endereco">Rua ruana 8</p>
+          <p id="endereco">Rua Teste</p>
         </div>
         <div id="valores">
-          <p id="venda">400000</p>
-          <p id="aluguel">500</p>
+          <p id="venda">R$ 3000000</p>
+          <p id="aluguel">R$ 3000</p>
         </div>
-        <p id="status">Disponivel</p>
+        <p id="status">Disponível</p>
         <div class="opcoes">
-          <button onclick="alterarStatus(2)">Alugar</button>
-          <button onclick="alterarStatus(3)">Vender</button>
+          <button id="btVenda">Vender</button>
+          <button id="btAluga">Alugar</button>
+          <button id="btDisponivel">Disponivel</button>
         </div>
       </div>
     </main>
   </body>
+  <script src="../js/home.js"></script>
 </html>
