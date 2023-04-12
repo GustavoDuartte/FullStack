@@ -59,9 +59,24 @@ const deleterestaurant = (req, res) => {
   });
 };
 
+const selectRestaurante = (req, res) => {
+  const query =
+    "SELECT r.nome, c.nome, a.nota FROM restaurante r INNER JOIN categoria c ON c.id = r.categoriaid INNER JOIN avaliacao a ON r.id = a.restauranteid";
+
+  conn.query(query, function (err, resp) {
+    if (err) {
+      console.log(err);
+      res.status(400).json(err).end();
+    }
+
+    res.status(200).json(resp).end();
+  });
+};
+
 module.exports = {
   addrestaurant,
   readrestaurant,
   updaterestaurant,
   deleterestaurant,
+  selectRestaurante,
 };

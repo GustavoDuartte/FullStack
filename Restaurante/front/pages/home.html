@@ -19,20 +19,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/home.css" />
-    <title>Home</title>
+    <link rel="stylesheet" href="../css/novo.css" />
+    <link rel="stylesheet" href="../css/pacientes.css" />
+
+    <title>Atendimentos</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./login.html">← Sign-Out</a>
+        <a class="navbar-brand" href="../login.html">← SIGN OUT</a>
       </div>
     </nav>
 
     <main>
-      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Nota</th>
+          </tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+      </table>
     </main>
   </body>
+  <script src="../js/home.js"></script>
   <!-- MDB -->
   <script
     type="text/javascript"

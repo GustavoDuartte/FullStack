@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url(https://img.pikbest.com/backgrounds/20190418/western-restaurant-red-menu_1806671.jpg!bw700);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.lista {
+  height: 200px;
+  width: 70vw;
+  background-color: blue;
+}
