@@ -3,10 +3,12 @@ const router = express.Router();
 
 const categoriaController = require("../controllers/categoria.controller");
 
-router.post("/add", categoriaController.addcategoria);
+router.post("/categoria/add", categoriaController.addcategoria);
 
-router.get("/read", categoriaController.readcategoria);
+router.get("/categoria/read", categoriaController.readcategoria);
 
-router.delete("/delete/:id", categoriaController.deletecategoria);
+router.put("/categoria/update/:id", categoriaController.updatecategoria);
+
+router.delete("/categoria/delete/:id", categoriaController.deletecategoria);
 
 module.exports = router;

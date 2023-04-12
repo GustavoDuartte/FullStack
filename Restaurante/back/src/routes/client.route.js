@@ -7,6 +7,8 @@ router.post("/add", clientController.addclient);
 
 router.get("/read", clientController.readclient);
 
+router.put("/update/:id", clientController.updateclient);
+
 router.post("/login", clientController.authclient);
 
 router.delete("/delete/:id", clientController.deleteclient);

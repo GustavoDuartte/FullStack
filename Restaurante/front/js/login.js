@@ -3,6 +3,8 @@ const loginSenha = document.querySelector("#loginPassword");
 const registerNome = document.querySelector("#registerName");
 const registerEmail = document.querySelector("#registerEmail");
 const registerSenha = document.querySelector("#registerPassword");
+const registerTelefone1 = document.querySelector("#registerTelefone1");
+const registerTelefone2 = document.querySelector("#registerTelefone2");
 
 function autenticar() {
   let data = {
@@ -38,6 +40,8 @@ function registrar() {
     nome: registerNome.value,
     email: registerEmail.value,
     senha: registerSenha.value,
+    telefone1: registerTelefone1.value,
+    telefone2: registerTelefone2.value,
   };
 
   let options = {

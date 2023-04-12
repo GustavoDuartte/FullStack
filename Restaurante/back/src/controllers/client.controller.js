@@ -28,6 +28,24 @@ const readclient = (req, res) => {
   });
 };
 
+const updateclient = (req, res) => {
+  const { id } = req.params;
+
+  const { nome, email, senha, telefone1, telefone2 } = req.body;
+
+  const query = `UPDATE cliente SET nome = '${nome}', email = '${email}', senha = '${senha}', telefone1 = '${telefone1}', telefone2 = '${telefone2}' WHERE id=${id}`;
+
+  conn.query(query, function (err, resp) {
+    if (err) {
+      let { sqlMessage, sqlState } = err;
+
+      res.status(400).json({ sqlMessage, sqlState }).end();
+    }
+
+    res.status(201).json(resp).end();
+  });
+};
+
 const authclient = (req, res) => {
   let client = new Client(req.body);
 
@@ -62,6 +80,7 @@ const deleteclient = (req, res) => {
 module.exports = {
   addclient,
   readclient,
+  updateclient,
   authclient,
   deleteclient,
 };
