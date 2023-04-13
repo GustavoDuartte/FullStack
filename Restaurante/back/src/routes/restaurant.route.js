@@ -9,6 +9,10 @@ router.get("/restaurante/read", restaurantController.readrestaurant);
 
 router.get("/selectrestaurante", restaurantController.selectRestaurante);
 
+router.get("/selectallrestaurante", restaurantController.selectAllRestaurante);
+
+router.get("/informacoesrest", restaurantController.informacoesRest);
+
 router.put("/restaurante/update/:id", restaurantController.updaterestaurant);
 
 router.delete("/restaurante/delete/:id", restaurantController.deleterestaurant);

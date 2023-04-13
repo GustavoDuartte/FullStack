@@ -31,9 +31,9 @@ const readavaliacao = (req, res) => {
 const updateavaliacao = (req, res) => {
   const { id } = req.params;
 
-  const { restauranteid, clienteid, dataava, nota, descricao } = req.body;
+  const { restauranteid, clienteid, dataava, nota, descricaoava } = req.body;
 
-  const query = `UPDATE avaliacao SET restauranteid = ${restauranteid}, clienteid = ${clienteid}, dataava = '${dataava}',nota = ${nota},descricao = '${descricao}' WHERE id = ${id}`;
+  const query = `UPDATE avaliacao SET restauranteid = ${restauranteid}, clienteid = ${clienteid}, dataava = '${dataava}',nota = ${nota},descricaoava = '${descricaoava}' WHERE id = ${id}`;
 
   conn.query(query, function (err, resp) {
     if (err) {

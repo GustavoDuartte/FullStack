@@ -33,7 +33,7 @@ const updatecategoria = (req, res) => {
 
   const { nome } = req.body;
 
-  const query = `UPDATE categoria SET nome = '${nome}' WHERE id=${id}`;
+  const query = `UPDATE categoria SET nome = '${nomecat}' WHERE id=${id}`;
 
   conn.query(query, function (err, resp) {
     if (err) {

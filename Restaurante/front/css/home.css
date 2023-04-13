@@ -1,30 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Comfortaa", cursive;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  background-image: url(https://img.pikbest.com/backgrounds/20190418/western-restaurant-red-menu_1806671.jpg!bw700);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 main {
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  padding-top: 200px;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+}
+main .form-group {
+  width: 200px;
+  box-shadow: #0000003d 0px 3px 8px;
+  padding: 20px;
+  border-radius: 7px;
 }
 
-.lista {
-  height: 200px;
-  width: 70vw;
-  background-color: blue;
+main .table {
+  width: 50%;
+  box-shadow: #0000003d 0px 3px 8px;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+main .table-modal{
+  width: 100%;
 }

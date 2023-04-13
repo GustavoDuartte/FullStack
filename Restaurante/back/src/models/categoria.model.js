@@ -1,11 +1,11 @@
 class Categoria {
   constructor(i) {
     this.id = i.id;
-    this.nome = i.nome;
+    this.nomecat = i.nomecat;
   }
 
   add() {
-    return `INSERT INTO categoria VALUE (DEFAULT, '${this.nome}')`;
+    return `INSERT INTO categoria VALUE (DEFAULT, '${this.nomecat}')`;
   }
   read() {
     return `SELECT * FROM categoria`;

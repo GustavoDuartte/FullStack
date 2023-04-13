@@ -5,11 +5,11 @@ class Avaliacao {
     this.clienteid = i.clienteid;
     this.dataava = i.dataava;
     this.nota = i.nota;
-    this.descricao = i.descricao;
+    this.descricaoava = i.descricaoava;
   }
 
   add() {
-    return `INSERT INTO avaliacao VALUES (DEFAULT, ${this.restauranteid}, ${this.clienteid}, '${this.dataava}', ${this.nota}, '${this.descricao}' )`;
+    return `INSERT INTO avaliacao VALUES (DEFAULT, ${this.restauranteid}, ${this.clienteid}, '${this.dataava}', ${this.nota}, '${this.descricaoava}' )`;
   }
   read() {
     return `SELECT * FROM avaliacao`;

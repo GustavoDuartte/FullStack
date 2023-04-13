@@ -17,7 +17,7 @@ CREATE TABLE
 CREATE TABLE
   categoria (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL
+    nomecat VARCHAR(255) NOT NULL
   );
 
 CREATE TABLE
@@ -27,6 +27,7 @@ CREATE TABLE
     categoriaid INT NOT NULL,
     rua VARCHAR(255) NOT NULL,
     numero INT NOT NULL,
+    cidade VARCHAR(255) NOT NULL,
     bairro VARCHAR(255) NOT NULL,
     estado VARCHAR(255) NOT NULL,
     complemento VARCHAR(255),
@@ -49,7 +50,7 @@ CREATE TABLE
     clienteid INT NOT NULL,
     dataava DATE NOT NULL,
     nota INT NOT NULL,
-    descricao VARCHAR(255) NOT NULL,
+    descricaoava VARCHAR(255) NOT NULL,
     FOREIGN KEY (restauranteid) REFERENCES restaurante (id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (clienteid) REFERENCES cliente (id) ON UPDATE CASCADE ON DELETE CASCADE
   );
