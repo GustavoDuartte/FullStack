@@ -1,23 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
 main {
   display: flex;
   flex-direction: column;
   gap: 50px;
   padding: 50px;
+  background-image: url(https://images.alphacoders.com/862/862729.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 99vw;
+  height: 95vh;
 }
 main .form-group {
   width: 200px;
   box-shadow: #0000003d 0px 3px 8px;
   padding: 20px;
   border-radius: 7px;
+  background-color: white;
 }
 
 main .table {
-  width: 50%;
   box-shadow: #0000003d 0px 3px 8px;
   padding: 20px;
   border-radius: 7px;
+  text-align: center;
+  background-color: white;
 }
 
-main .table-modal{
+main .table-modal {
+  width: 70%;
+}
+main .table-modal-aval {
   width: 100%;
 }
+main .tabela-scroll {
+  overflow-y: auto;
+  max-height: 300px;
+}
+.modal-body {
+  padding-top: 50px;
+  background-image: url(https://images6.alphacoders.com/366/366291.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+::-webkit-scrollbar {
+  width: 17px;
+  scroll-behavior: smooth;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+.btn {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.form input{
+  width: 200px;
+}
+

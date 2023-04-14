@@ -13,6 +13,8 @@ router.get("/selectallrestaurante", restaurantController.selectAllRestaurante);
 
 router.get("/informacoesrest", restaurantController.informacoesRest);
 
+router.get("/informacoesaval", restaurantController.informacoesAval);
+
 router.put("/restaurante/update/:id", restaurantController.updaterestaurant);
 
 router.delete("/restaurante/delete/:id", restaurantController.deleterestaurant);

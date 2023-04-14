@@ -69,7 +69,7 @@ const deleterestaurant = (req, res) => {
 
 const selectRestaurante = (req, res) => {
   const { cat } = req.query;
-  const query = `SELECT r.nome, c.nomecat, a.nota FROM restaurante r INNER JOIN categoria c ON c.id = r.categoriaid INNER JOIN avaliacao a ON r.id = a.restauranteid WHERE c.nomecat = '${cat}'`;
+  const query = `SELECT r.nome, c.nomecat FROM restaurante r INNER JOIN categoria c ON c.id = r.categoriaid WHERE c.nomecat = '${cat}'`;
 
   conn.query(query, function (err, resp) {
     if (err) {
@@ -82,7 +82,7 @@ const selectRestaurante = (req, res) => {
 };
 
 const selectAllRestaurante = (req, res) => {
-  const query2 = `SELECT r.nome, c.nomecat, a.nota FROM restaurante r INNER JOIN categoria c ON c.id = r.categoriaid INNER JOIN avaliacao a ON r.id = a.restauranteid`;
+  const query2 = `SELECT r.nome, c.nomecat FROM restaurante r INNER JOIN categoria c ON c.id = r.categoriaid`;
 
   conn.query(query2, function (err, resp) {
     if (err) {
@@ -95,10 +95,24 @@ const selectAllRestaurante = (req, res) => {
 };
 
 const informacoesRest = (req, res) => {
+  const { nome } = req.query;
 
-  const {nome} = req.query;
+  const query = `SELECT r.nome, r.rua, r.numero, r.bairro, r.cidade, r.estado, r.complemento, c.descricao, c.valor FROM restaurante r INNER JOIN cardapio c ON c.restauranteid = r.id WHERE r.nome = '${nome}'`;
 
-  const query = `SELECT r.nome, r.rua, r.numero, r.bairro, r.cidade, r.estado, r.complemento, c.descricao, c.valor, a.nota, a.dataava, a.descricaoava FROM restaurante r INNER JOIN cardapio c ON c.restauranteid = r.id INNER JOIN avaliacao a ON r.id = a.restauranteid WHERE r.nome = '${nome}'`;
+  conn.query(query, function (err, resp) {
+    if (err) {
+      console.log(err);
+      res.status(400).json(err).end();
+    }
+
+    res.status(200).json(resp).end();
+  });
+};
+
+const informacoesAval = (req, res) => {
+  const { nome } = req.query;
+
+  const query = `SELECT r.id, r.nome, r.rua, r.numero, r.bairro, r.cidade, r.estado, r.complemento, c.descricao, c.valor, a.nota, a.dataava, a.descricaoava FROM restaurante r INNER JOIN cardapio c ON c.restauranteid = r.id INNER JOIN avaliacao a ON r.id = a.restauranteid WHERE r.nome = '${nome}'`;
 
   conn.query(query, function (err, resp) {
     if (err) {
@@ -118,4 +132,5 @@ module.exports = {
   selectRestaurante,
   selectAllRestaurante,
   informacoesRest,
+  informacoesAval,
 };

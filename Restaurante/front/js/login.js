@@ -25,7 +25,7 @@ function autenticar() {
       return resp.json();
     })
     .then((info) => {
-      if (info.id != undefined) {
+      if (info != undefined) {
         localStorage.setItem("user", JSON.stringify(info));
 
         window.location.href = "../pages/home.html";
@@ -57,7 +57,7 @@ function registrar() {
       return resp.json();
     })
     .then((info) => {
-      if (info.id != undefined) {
+      if (info != undefined) {
         localStorage.setItem("user", JSON.stringify(info));
 
         window.location.href = "../pages/login.html";
