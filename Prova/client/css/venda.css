@@ -42,3 +42,16 @@ main .table {
   margin-right: 50px;
   color: white;
 }
+select {
+  width: 21vw;
+  height: 4vh;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 0px 2px 0px black;
+}
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 20px;
+}

@@ -1,8 +1,18 @@
 const registerQuant = document.querySelector("#registerQuant");
 const registerData = document.querySelector("#registerData");
-const registerVend = document.querySelector("#registerVend");
-const registerProd = document.querySelector("#registerProd");
-const select = document.querySelector("select");
+const select = document.querySelector("#select1");
+const select2 = document.querySelector("#select2");
+
+let produtoid = "";
+  let vendedorid = "";
+
+select.addEventListener("change", (event) => {
+  vendedorid = select.value;
+});
+
+select2.addEventListener("change", (event) => {
+  produtoid = select2.value;
+});
 
 fetch("http://localhost:3000/vendedor/read", { method: "GET" })
   .then((response) => response.json())
@@ -16,24 +26,24 @@ fetch("http://localhost:3000/vendedor/read", { method: "GET" })
   })
   .catch((error) => console.error(error));
 
-const vendedores = [];
-
-function vendedor(vetor) {
-  vetor.forEach((e) => {
-    for (let i = 0; i < vendedores.lenght; i++) {
-      let lin = document.createElement("option");
-      lin.innerHTML = e.nome_vendedor;
-      select.appendChild(lin);
-    }
-  });
-}
+  fetch("http://localhost:3000/produto/read", { method: "GET" })
+  .then((response) => response.json())
+  .then((produtos) => {
+    produtos.forEach((produto) => {
+      const option2 = document.createElement("option");
+      option2.value = produto.idproduto;
+      option2.textContent = produto.nome_produto;
+      select2.appendChild(option2);
+    });
+  })
+  .catch((error) => console.error(error));
 
 function registrar() {
   let data = {
     data_venda: registerData.value,
     quantidade: registerQuant.value,
-    produtoid: registerVend.value,
-    vendedorid: registerProd.value,
+    produtoid: produtoid,
+    vendedorid: vendedorid,
   };
 
   let options = {
@@ -50,7 +60,7 @@ function registrar() {
     })
     .then((info) => {
       if (info != undefined) {
-        window.location.href = "../pages/index.html";
+        window.location.href = "../pages/venda.html";
       } else {
         alert(info.msg);
       }
