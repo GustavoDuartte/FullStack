@@ -29,11 +29,11 @@ const readvendedor = (req, res) => {
 };
 
 const updatevendedor = (req, res) => {
-  const { id } = req.params;
+  const { matricula } = req.params;
 
-  const { nome, matricula } = req.body;
+  const { nome_vendedor } = req.body;
 
-  const query = `UPDATE vendedores SET nome = '${nome}', matricula = '${matricula}' WHERE id=${id}`;
+  const query = `UPDATE vendedores SET nome_vendedor = '${nome_vendedor}' WHERE matricula=${matricula}`;
 
   conn.query(query, function (err, resp) {
     if (err) {
@@ -61,9 +61,9 @@ const deletevendedor = (req, res) => {
 const valorPorVendedor = (req, res) => {
   const q = `SELECT e.nome_vendedor, e.matricula, SUM(p.valor*v.quantidade) AS total_vendido, SUM((p.valor*quantidade) * 0.05) AS comissao
 FROM vendas v
-INNER JOIN vendedores e ON e.id = v.vendedorid
-INNER JOIN produtos p ON p.id = v.produtoid
-GROUP BY e.id;
+INNER JOIN vendedores e ON e.idvendedor = v.vendedorid
+INNER JOIN produtos p ON p.idproduto = v.produtoid
+GROUP BY e.idvendedor;
 `;
 
   conn.query(q, function (err, resp) {

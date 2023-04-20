@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/celular.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/form.css" />
+    <title>Cadastro de Vendas</title>
+  </head>
+  <body>
+    <main>
+      <div class="form">
+        <form>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="date" id="registerData" class="form-control" />
+                <label class="form-label" for="form6Example1"
+                  >Data da Venda</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="number" id="registerQuant" class="form-control" />
+            <label class="form-label" for="form6Example3">Quantidade</label>
+          </div>
+
+          <!-- <input type="text" id="registerVend" class="form-control" />
+            <label class="form-label" for="form6Example4">Vendedor ID</label> -->
+          <div class="option">
+            <select class="form-control select-label" id="query">
+              <option value="">None</option>
+            </select>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="text" id="registerProd" class="form-control" />
+            <label class="form-label" for="form6Example5">Produto ID</label>
+          </div>
+
+          <button
+            type="submit"
+            onclick="registrar()"
+            class="btn btn-primary btn-block mb-4"
+          >
+            Cadastrar
+          </button>
+          <a href="./venda.html">
+            <button
+              type="button"
+              class="btn btn-link"
+              data-mdb-ripple-color="dark"
+            >
+              Ir Para Lista
+            </button>
+          </a>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script src="../js/form.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+  ></script>
+</html>

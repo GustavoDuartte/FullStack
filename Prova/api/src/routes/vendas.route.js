@@ -9,8 +9,8 @@ router.get("/read", vendasController.readvenda);
 
 router.get("/readVenda", vendasController.readvendafeita);
 
-router.put("/update/:id", vendasController.updatevenda);
+router.put("/update/:idvenda", vendasController.updatevenda);
 
-router.delete("/delete/:id", vendasController.deletevenda);
+router.delete("/delete/:idvenda", vendasController.deletevenda);
 
 module.exports = router;

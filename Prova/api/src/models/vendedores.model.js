@@ -1,6 +1,6 @@
 class Cliente {
   constructor(i) {
-    this.id = i.id;
+    this.idvendedor = i.idvendedor;
     this.nome = i.nome;
     this.matricula = i.matricula;
   }
@@ -13,7 +13,7 @@ class Cliente {
   }
 
   delete() {
-    return `DELETE FROM vendedores WHERE id = ${this.id}`;
+    return `DELETE FROM vendedores WHERE idvendedor = ${this.idvendedor}`;
   }
 }
 module.exports = Cliente;

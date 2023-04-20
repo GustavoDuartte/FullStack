@@ -29,11 +29,11 @@ const readproduto = (req, res) => {
 };
 
 const updateproduto = (req, res) => {
-  const { id } = req.params;
+  const { idproduto } = req.params;
 
   const { nome, valor } = req.body;
 
-  const query = `UPDATE produtos SET nome = '${nome}', valor = ${valor} WHERE id=${id}`;
+  const query = `UPDATE produtos SET nome = '${nome}', valor = ${valor} WHERE idproduto=${idproduto}`;
 
   conn.query(query, function (err, resp) {
     if (err) {
@@ -59,7 +59,7 @@ const deleteproduto = (req, res) => {
 };
 
 const valortotal = (req, res) => {
-  const q = `SELECT SUM(valor*v.quantidade) AS valor_total FROM produtos p JOIN vendas v ON p.id = v.produtoid`;
+  const q = `SELECT SUM(valor*v.quantidade) AS valor_total FROM produtos p JOIN vendas v ON p.idproduto = v.produtoid`;
 
   conn.query(q, function (err, resp) {
     if (err) {

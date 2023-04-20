@@ -6,25 +6,25 @@ USE loja;
 
 CREATE TABLE
   vendedores (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idvendedor INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome_vendedor VARCHAR(255) NOT NULL,
-    matricula INT NOT NULL
+    matricula INT NOT NULL UNIQUE
   );
 
 CREATE TABLE
   produtos (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idproduto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome_produto VARCHAR(255) NOT NULL,
-    valor FLOAT (5,2) NOT NULL
+    valor FLOAT (5, 2) NOT NULL
   );
 
 CREATE TABLE
   vendas (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idvenda INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     data_venda DATE NOT NULL,
     quantidade INT NOT NULL,
     produtoid INT NOT NULL,
     vendedorid INT NOT NULL,
-    FOREIGN KEY (produtoid) REFERENCES produtos (id) ON UPDATE CASCADE,
-    FOREIGN KEY (vendedorid) REFERENCES vendedores (id) ON UPDATE CASCADE
+    FOREIGN KEY (produtoid) REFERENCES produtos (idproduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (vendedorid) REFERENCES vendedores (idvendedor) ON UPDATE CASCADE ON DELETE CASCADE
   );

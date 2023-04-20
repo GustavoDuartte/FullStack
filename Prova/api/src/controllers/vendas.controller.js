@@ -29,11 +29,11 @@ const readvenda = (req, res) => {
 };
 
 const updatevenda = (req, res) => {
-  const { id } = req.params;
+  const { idvenda } = req.params;
 
   const { data_venda, quantidade, produtoid, vendedorid } = req.body;
 
-  const query = `UPDATE vendas SET data_venda = '${data_venda}', quantidade = ${quantidade}, produtoid = '${produtoid}', vendedorid = ${vendedorid} WHERE id = ${id}`;
+  const query = `UPDATE vendas SET data_venda = '${data_venda}', quantidade = ${quantidade}, produtoid = '${produtoid}', vendedorid = ${vendedorid} WHERE idvenda = ${idvenda}`;
 
   conn.query(query, function (err, resp) {
     if (err) {
@@ -59,7 +59,7 @@ const deletevenda = (req, res) => {
 };
 
 const readvendafeita = (req, res) => {
-  const q = `SELECT v.data_venda, p.nome_produto, e.nome_vendedor FROM vendas v INNER JOIN produtos p ON p.id = v.produtoid INNER JOIN vendedores e ON e.id = v.vendedorid`;
+  const q = `SELECT v.idvenda, v.data_venda, v.quantidade, p.nome_produto, e.nome_vendedor, p.idproduto, e.idvendedor FROM vendas v INNER JOIN produtos p ON p.idproduto = v.produtoid INNER JOIN vendedores e ON e.idvendedor = v.vendedorid`;
 
   conn.query(q, function (err, resp) {
     if (err) {

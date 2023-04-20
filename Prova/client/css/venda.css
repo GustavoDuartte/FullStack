@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  background-image: url(https://img.freepik.com/premium-photo/abstract-blur-organic-fresh-fruits-vegetable-grocery-shelves-supermarket-store-defocused-bokeh-light-background_293060-159.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 99vw;
+  height: 95vh;
+}
+
+main .table {
+  box-shadow: #0000003d 0px 3px 8px;
+  padding: 20px;
+  border-radius: 7px;
+  text-align: center;
+  background-color: white;
+}
+.modal-body {
+  padding-top: 50px;
+}
+::-webkit-scrollbar {
+  width: 17px;
+  scroll-behavior: smooth;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+.btn {
+  background-color: rgba(255, 0, 0, 0.7);
+  margin-right: 50px;
+  color: white;
+}

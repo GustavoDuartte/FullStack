@@ -1,6 +1,6 @@
 class Categoria {
   constructor(i) {
-    this.id = i.id;
+    this.idproduto = i.idproduto;
     this.nome = i.nome;
     this.valor = i.valor;
   }
@@ -13,7 +13,7 @@ class Categoria {
   }
 
   delete() {
-    return `DELETE FROM produtos WHERE id = ${this.id}`;
+    return `DELETE FROM produtos WHERE idproduto = ${this.idproduto}`;
   }
 }
 module.exports = Categoria;

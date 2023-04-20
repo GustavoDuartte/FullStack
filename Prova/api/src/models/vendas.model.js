@@ -1,6 +1,6 @@
 class Restaurant {
   constructor(i) {
-    this.id = i.id;
+    this.idvenda = i.idvenda;
     this.data_venda = i.data_venda;
     this.quantidade = i.quantidade;
     this.produtoid = i.produtoid;
@@ -15,7 +15,7 @@ class Restaurant {
   }
 
   delete() {
-    return `DELETE FROM vendas WHERE id = ${this.id}`;
+    return `DELETE FROM vendas WHERE idvenda = ${this.idvenda}`;
   }
 }
 module.exports = Restaurant;
